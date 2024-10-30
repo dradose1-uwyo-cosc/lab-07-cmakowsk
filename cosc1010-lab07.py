@@ -49,16 +49,18 @@ print("*"*75)
     # I recommend checking out: https://www.w3schools.com/python/ref_string_replace.asp to figure out how one may remove a character from a string
 # All this together means you will have an intensive while loop that includes multiple if statements, likely with some nesting 
 # The sum should start at 0 
+num_sum = 0 
 while True:
-    integer_val = input()
-    if integer_val.isdigit () and int(integer_val) > 0
+    integer_val = input("Type Number Here:")
+    if integer_val.isdigit ():
+        num_sum += int(integer_val)
+    if integer_val.lower() == "exit":
+        break
+    else:
+        print("Please give an integer")
     
-    
-    
-    
-    num_sum = 0 
 
-    print(f"Your final sum is {num_sum}")
+print(f"Your final sum is {num_sum}")
 
 print("*"*75)
 # Now you will be creating a two operand calculator
