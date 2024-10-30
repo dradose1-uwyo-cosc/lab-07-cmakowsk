@@ -49,13 +49,13 @@ print("*"*75)
     # I recommend checking out: https://www.w3schools.com/python/ref_string_replace.asp to figure out how one may remove a character from a string
 # All this together means you will have an intensive while loop that includes multiple if statements, likely with some nesting 
 # The sum should start at 0 
-num_sum = 0 
+num_sum = 0
 while True:
     integer_val = input("Type Number Here:")
-    if integer_val.isdigit ():
-        num_sum += int(integer_val)
     if integer_val.lower() == "exit":
         break
+    if integer_val.lstrip('-').isdigit():
+        num_sum += int(integer_val)
     else:
         print("Please give an integer")
     
@@ -79,5 +79,36 @@ print("*"*75)
     # So, it should function the same for `5 + 6` as `5+6`
 # Print the result of the equation
 # Again, loop through prompting the user for input until `exit` in any casing is input 
+
+while True:
+    Calc_str = input("Enter Equation here:")
+    operators = ['+', '-', '*', '/', '%']
+    Calc_str = Calc_str.replace(" ", "")
+    operator = None
+    for op in operators:
+        if op in Calc_str:
+            operator = op
+            break
+    if operator == None:
+        print("Error: retype equation")
+        answer = "Error"
+    split_str = Calc_str.split(operator)
+    if split_str[0].isnumeric() and split_str[1].isnumeric():
+        number1 = int(split_str[0])
+        number2 = int(split_str[1])
+    if operator == '+':
+        answer = number1 + number2
+    if operator == '-':
+        answer = number1 - number2
+    if operator == '*':
+        answer = number1 * number2
+    if operator == '/':
+        answer = number1/number2
+    if operator == '%':
+        answer = number1 % number2
+    if Calc_str.lower() == 'exit':
+        break
+    print(f"Your Answer is: {answer}")
+
 
         
