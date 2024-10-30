@@ -16,10 +16,23 @@
     # To do so you can use the methods `.isdigit()` or `.isnumeric()`
     # If a user did not enter a number output a statement saying so
 # You will continue to prompt the user until a proper integer value is entered
+while True:
+    Upper_input = input("Give upper bound here:")
 
-factorial = 1
+    if Upper_input.isdigit() and int(Upper_input) > 0:
+        upper_bound = int(Upper_input)
+        factorial = 1
 
-print(f"The result of the factorial based on the given bound is {factorial}")
+        for number in range (1, upper_bound + 1):
+        # the upper_bound +1 is because you gotta remember python excludes the last number in a range
+        # for example range 1,4 is actually gonna only do numbers 1,2, and 3
+            factorial *= number
+        #multiply the original number times however many times until number isn't in range
+
+        print(f"The result of the factorial based on the given bound is {factorial}")
+        break
+    else:
+        print("Please give a positive integer")
 
 print("*"*75)
 # Create a while loop that prompts a user for input of an integer values
@@ -36,10 +49,16 @@ print("*"*75)
     # I recommend checking out: https://www.w3schools.com/python/ref_string_replace.asp to figure out how one may remove a character from a string
 # All this together means you will have an intensive while loop that includes multiple if statements, likely with some nesting 
 # The sum should start at 0 
+while True:
+    integer_val = input()
+    if integer_val.isdigit () and int(integer_val) > 0
+    
+    
+    
+    
+    num_sum = 0 
 
-num_sum = 0 
-
-print(f"Your final sum is {num_sum}")
+    print(f"Your final sum is {num_sum}")
 
 print("*"*75)
 # Now you will be creating a two operand calculator
